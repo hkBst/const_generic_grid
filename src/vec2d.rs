@@ -43,7 +43,7 @@ impl<T> Gridlike<T> for Grid<T> {
     {
         use rayon::prelude::*;
         self.array.par_iter_mut().enumerate().for_each(|(y, row)| {
-            for (x, item) in row.iter_mut().enumerate() {
+            for (x, item) in row.par_iter_mut().enumerate() {
                 *item = setter(Point { x, y });
             }
         });
