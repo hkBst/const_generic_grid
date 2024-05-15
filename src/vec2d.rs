@@ -13,7 +13,7 @@ impl<T> Grid<T> {
     {
         let mut array = Vec::with_capacity(height);
         for _ in 0..height {
-            array.push([T::default()].repeat(width * height));
+            array.push([T::default()].repeat(width));
         }
         Self {
             array,
